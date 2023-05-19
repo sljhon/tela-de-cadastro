@@ -1,0 +1,279 @@
+@import url('<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;800&display=swap" rel="stylesheet">');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ;
+    font-family: 'poppins', 'sans-serif';
+    
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('src/5927911.gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: aliceblue;
+}
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+   
+}
+
+.logo{
+    font-size: 2em;
+    color: aliceblue;
+    user-select: none;
+}
+
+.navegacao a {
+    position: relative;
+    font-size: 1.1em;
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 40px;
+    text-decoration: none;
+
+}
+
+.navegacao a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background:rgb(224, 235, 235);
+    border-radius:5px;
+    transform-origin:right ;
+    transform: scaleX(0);
+    transition: transform 0.5s ;
+}
+
+.navegacao a:hover::after{
+    transform-origin: left;
+ transform: scaleX(1);
+}
+
+
+.navegacao .btnLogin-popup{
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    border: 2px solid rgb(227, 240, 240);
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: aliceblue;
+    font-weight: 500;
+    margin-left: 40px;
+    transition: .5s;
+    
+}
+
+.navegacao .btnLogin-popup:hover{
+    background: #afff;
+    color: #162938;
+}
+
+.meio{
+    position: relative;
+    width: 400px;
+    height: 440px;
+    background: beige;
+    border: 2PX solid rgba(225, 225, 225, 5);
+    border-radius: 9px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba (0, 0 , 0, 5 );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.meio.active-popup{
+    transform: scale(1);
+}
+
+.active{
+    height: 500px;
+}
+
+.meio .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.meio.active .form-box.login{
+position: none;
+transform: translateX(-400px);
+}
+
+.meio .form-box.register{
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+
+}
+
+.meio.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+
+
+.meio .form-box{
+    height: 100%;
+    padding: 40px;
+}
+
+.meio .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width:40px;
+    height:40px;
+    background: #22c9c9;
+    font-size: 2em;
+    color: rgb(221, 233, 233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2{
+    font-size: 2em;
+    color: #0b0c0c;
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    border-bottom: 2px solid #141414;
+    margin: 30px 0;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50px;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #1a1b1b;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 5px;
+    height: 100%;
+
+}
+
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #0b0c0c;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.icon{
+    position: absolute;
+    right: 8px;
+    
+    font-size: 1.2em;
+    color: #0b0c0c;
+    line-height: 80px;
+}
+
+.lembrar-senha{
+    font-size: .9em;
+    color: #141818;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.lembrar-senha label input{
+    accent-color: #191c1f;
+    margin-right: 3px;
+}
+
+.lembrar-senha a {
+    color: black;
+    text-decoration: none;
+    
+}
+.lembrar-senha a:hover{
+    text-decoration: underline;
+}
+
+.btn{
+    width: 100%;
+    height: 45px;
+    background: #52e9e9;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    
+}
+
+.login-register{
+    font-size: .9em;
+    color: #272222;
+    text-align: center ;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    
+    
+}
+
+.login-register p a {
+    color: #0c0e0e;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 6px;
+    
+}
+
+.login-register p a:hover{
+    text-decoration: underline;
+    
+}
+
